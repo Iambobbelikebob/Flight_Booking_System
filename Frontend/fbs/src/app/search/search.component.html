@@ -1,0 +1,88 @@
+<router-outlet></router-outlet>
+<mat-toolbar>
+  <mat-icon>search</mat-icon> 
+  <span>Search</span>
+</mat-toolbar>
+<!--<mat-list>
+  <mat-list-item>cleartrip
+    <mat-icon aria-hidden="false" aria-label="Example icon">flight</mat-icon>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>Top offers
+    <mat-icon aria-hidden="false" aria-label="Example icon">headset</mat-icon>
+  </mat-list-item>
+  
+  <mat-divider></mat-divider>
+  <mat-list-item>giftcard
+  </mat-list-item>
+  
+  <mat-divider></mat-divider>
+  <mat-list-item>Support
+    <mat-icon aria-hidden="false" aria-label="Example icon">headset</mat-icon>
+  </mat-list-item>
+</mat-list>-->
+<div style="padding: 50px;" class="d-flex align-items-center justify-content-center">  
+  <div class="shadow-lg p-3 mb-5 bg-white" id="box" style="opacity: 1;">  
+   <div class="container">
+     <div class="row justify-content-center">
+         <h2  class="font-weight-bold" style="color: rgb(20, 20, 20)">Search Flight</h2>
+     </div>
+<!-- <div class="first">
+<h1>Search Flights</h1>
+<h3>Indian Railways</h3> -->
+<mat-form-field>
+    <mat-label><b>Origin</b></mat-label>
+    <mat-select placeholder="Origin" [(value)]="selectedValue" >
+      <mat-option>None</mat-option>
+     <mat-optgroup label='From_location'>
+        <mat-option value='Bangalore'>Bangalore</mat-option>
+        <mat-option value='Mysore'>Mysore</mat-option>
+        <mat-option value='Hyderabad'>Hyderabad</mat-option>
+        <mat-option value='Delhi'>Delhi</mat-option>
+        <mat-option value='Goa'>Goa</mat-option>
+        <mat-option value='Chennai'>Chennai</mat-option>
+        <mat-option value='Mumbai'>Mumbai</mat-option>
+     </mat-optgroup>
+      <!--<mat-optgroup label='To_location'>
+        <mat-option value='ionic'>Russia</mat-option>
+        <mat-option value='reactnative'>Canada</mat-option>
+        <mat-option value='reactnative'>France</mat-option>
+        <mat-option value='reactnative'>Germany</mat-option>
+        <mat-option value='reactnative'>Antartica</mat-option>
+      </mat-optgroup>-->
+    </mat-select>
+  </mat-form-field>
+  {{selectedValue}}
+  <br>
+  <mat-form-field>
+    <mat-label><b>Destination</b></mat-label>
+    <mat-select placeholder="Destination" [(value)]="selectedValue1" >
+      <mat-option>None</mat-option>
+      <mat-optgroup label='From_location'>
+        <mat-option value='Bangalore'>Bangalore</mat-option>
+        <mat-option value='Mysore'>Mysore</mat-option>
+        <mat-option value='Hyderabad'>Hyderabad</mat-option>
+        <mat-option value='Delhi'>Delhi</mat-option>
+        <mat-option value='Goa'>Goa</mat-option>
+        <mat-option value='Chennai'>Chennai</mat-option>
+        <mat-option value='Mumbai'>Mumbai</mat-option>
+      </mat-optgroup>
+      <!--<mat-optgroup label='To_location'>
+        <mat-option value='ionic'>Russia</mat-option>
+        <mat-option value='reactnative'>Canada</mat-option>
+        <mat-option value='reactnative'>France</mat-option>
+        <mat-option value='reactnative'>Germany</mat-option>
+        <mat-option value='reactnative'>Antartica</mat-option>
+      </mat-optgroup> -->
+    </mat-select>
+  </mat-form-field>
+  {{selectedValue1}}
+<br>
+  <!--<button type="button">Search</button>-->
+  <div class="button">
+    <button mat-raised-button class="nextButton" routerLink="/flight" routerLinkActive="active">NEXT</button><br>
+  </div>
+</div>
+<a mat-button routerLink="next">
+
+ 

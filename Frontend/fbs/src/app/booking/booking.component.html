@@ -1,0 +1,84 @@
+<div style="padding: 50px;" class="d-flex align-items-center justify-content-center">
+  <div class="shadow-lg p-3 mb-5 bg-lightgreen" id="box" style="opacity: 1;">  
+   <div class="container">
+     <div class="row justify-content-center">
+         <h2  class="font-weight-bold" style="color: rgb(20, 20, 20);"></h2>
+<div class="container">
+  <div classs="card">
+   <h3 class="text-center" style="color: lightcyan;"></h3>
+     <div class="card-body">
+       <table class="table table-stripped" style="background-color: lightcyan ;">
+         <thead> 
+             <th>PNR</th>
+             <!-- <th>Ticket Id</th> -->
+             <th>NO Of Seats</th>
+             <th>Origin</th> 
+             <th>Destination</th> 
+             <th>Time</th>
+            <th>Action</th>
+         </thead>
+           <tbody>
+            <tr *ngFor = "let data of books" style="color: #7272da;">                              
+                  <td>{{data.pnr}}</td>
+                  <!-- <td>{{data.ticket_id}}</td> -->
+                  <td>{{data.no_of_seats}}</td>
+                  <td>{{data.origin}}</td>
+                  <td>{{data.destination}}</td>
+                  <td>{{data.time}}</td>
+                  <td>
+       <button (click) = "onEditBook(data)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Edit</button>
+       &nbsp;<button class="btn btn-danger" (click) = "deleteBookingList(data)">Delete</button>
+       </td>
+        </tr>
+        </tbody>
+         </table>
+           </div>
+       </div>
+   
+   </div>
+ 
+   <!-- Modal - 1-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <label class="form-label">FLIGHT DETAILS</label>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+     <form [formGroup]="formValue"> 
+                
+        <div class="mb-3">
+                <label class="form-label">PNR</label>
+                <input type="text" formControlName="pnr" class="form-control"  id="exampleInputEmail">
+            </div>
+ 
+                <!-- <div class="mb-3">
+                    <label class="form-label">Ticket Id</label>
+                    <input type="text" formControlName="ticket_id" class="form-control"  id="exampleInputEmail">
+                </div> -->
+                <div class="mb-3">
+                  <label class="form-label">No Of Seats</label>
+                  <input type="text" formControlName="no_of_seats" class="form-control"  id="exampleInputEmail">
+              </div>
+                <div class="mb-3">
+                    <label class="form-label">Origin</label>
+                    <input type="text" formControlName="origin" class="form-control" id="exampleInputEmail">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Destination</label>
+                  <input type="text" formControlName="destination" class="form-control"  id="exampleInputEmail">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">Time</label>
+                  <input type="text" formControlName="time" class="form-control"  id="exampleInputEmail">
+              </div>
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button  type="button" (click)="updateBookingList()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>

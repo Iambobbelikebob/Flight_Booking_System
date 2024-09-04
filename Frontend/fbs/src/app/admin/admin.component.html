@@ -1,0 +1,77 @@
+<div class="container">
+  <div classs="card">
+     <h3 class="text-center" style="color: rgb(5, 1, 0);"><b>LIST OF FLIGHTS</b></h3>
+      <div class="card-body">
+       <table class="table table-stripped" style="background-color: #fff;">
+          <thead>
+                       
+                       <th>Flight ID</th>
+                       <th>Flight Name</th>
+                       <th>Origin</th> 
+                       <th>Destination</th> 
+                       <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let data of flights" style="color: blueviolet;">
+                             
+                            <td>{{data.f_id}}</td>
+                            <td>{{data.f_name}}</td>
+                            <td>{{data.origin}}</td>
+                            <td>{{data.destination}}</td>
+                            <td>
+
+                              <button (click) = "onEditFlight(data)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Edit
+                              </button>
+                            &nbsp;<button class="btn btn-danger" (click) = "deleteFlight(data)">Delete</button>
+                           
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button (click)="clickAddFlight()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add Flight
+              </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">ADD FLIGHT</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="formValue">
+          <!-- <div class="mb-3">
+            <label class="form-label">Flight ID</label>
+            <input type="text" formControlName="f_id" class="form-control" placeholder="Flight ID" id="exampleInputEmail1">
+          </div> -->
+            <div class="mb-3">
+              <label class="form-label">Flight Name</label>
+              <input type="text" formControlName="f_name" class="form-control" placeholder="Flight Name" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Origin</label>
+                <input type="text" formControlName="origin" class="form-control" placeholder="Origin" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Destination</label>
+                <input type="text" formControlName="destination" class="form-control" placeholder="Destination" id="exampleInputEmail1">
+            </div>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button  type="button" class="btn btn-primary" (click)="addFlight()">Add Flight</button>
+      <button   type="button" class="btn btn-primary" (click)="updateFlight()">Update Flight</button>
+    </div>
+  </div>
+</div>
+</div>

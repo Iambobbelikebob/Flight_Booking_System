@@ -1,0 +1,9 @@
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nextButton{
+    background-color: #1877f2;
+    color: aliceblue;
+}

@@ -1,0 +1,41 @@
+<div style="padding: 50px;" class="d-flex align-items-center justify-content-center">
+  
+    <div class="shadow-lg p-3 mb-5 bg-white" id="box" style="opacity: 1;">  
+
+     <div class="container">
+
+       <div class="row justify-content-center">
+
+           <h2  class="font-weight-bold" style="color: rgb(20, 20, 20)">Flights List</h2>
+
+       </div>
+<!-- <div class="container">
+    <div classs="card">
+        <h3 class="text-center"> Flights List </h3>
+        <div class="card-body"> -->
+            
+            <table class="table table-stripped">
+                <thead>
+                   <th>FlightID</th>
+                   <th>FlightName</th>
+                   <th>Origin</th>
+                   <th>destination</th> 
+                   <th>Action</th> 
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let data of flight">
+                        <td>{{data.f_id}}</td>
+                        <td>{{data.f_name}}</td>
+                        <td>{{data.origin}}</td>
+                        <td>{{data.destination}}</td>
+                        <td>
+                            <button routerLink="/login"  type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Book</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--<button (click) = "getFlights()">Click</button>-->
+        </div>
+    </div>
+</div>

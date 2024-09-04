@@ -1,0 +1,30 @@
+body{
+    background-color: white;
+}
+h1,h3{
+    text-align: center;
+}
+nav{
+    text-align: top;
+}
+nav.one{
+    text-align: center;
+}
+.myText1{
+   
+    font-size: 30px;
+    font-weight: 700;
+    font-family:  'Courier New', Courier, monospace;
+    font-style: italic ;
+    display: flex;
+    color: rgb(170, 8, 8);
+}
+.myText1{
+    text-align: center;
+}
+.space {
+
+    flex: 1 1 auto;
+
+}
+
